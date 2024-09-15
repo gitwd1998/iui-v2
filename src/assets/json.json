@@ -1,0 +1,17 @@
+{
+  "xiamingrui": {
+    "name": "xiamingrui",
+    "empit": "HX1111",
+    "dep": "流程与IT部"
+  },
+  "zhaochunbo": {
+    "name": "zhaochunbo",
+    "empit": "HZ222",
+    "dep": "流程与IT部"
+  },
+  "panjiayi": {
+    "name": "panjiayi",
+    "empit": "HD333",
+    "dep": "流程与IT部"
+  }
+}

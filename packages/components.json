@@ -1,0 +1,14 @@
+[
+  {
+    "compName": "IButton",
+    "compZhName": "按钮",
+    "compDesc": "自定义按钮",
+    "compClassName": "i-button"
+  },
+  {
+    "compName": "IIcon",
+    "compZhName": "图标",
+    "compDesc": "字体图标",
+    "compClassName": "i-icon"
+  }
+]
