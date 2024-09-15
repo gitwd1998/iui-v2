@@ -7,12 +7,16 @@
     "dev": "vite --config ./vite.config.js",
     "build": "vite build --config ./vite.config.js",
     "preview": "vite preview",
+    "stylelint": "stylelint **/*.{html,vue,css,less,scss} --fix --ignore-path .gitignore",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "gen": "node ./script/generator/index.js"
   },
   "dependencies": {
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@vitejs/plugin-vue": "^2.2.0",
     "eslint": "^8.57.0",
     "eslint-config-standard": "^17.1.0",
@@ -22,6 +26,7 @@
     "handlebars": "^4.7.8",
     "inquirer": "^8.2.6",
     "less": "^4.1.2",
+    "lint-staged": "^15.2.10",
     "path": "^0.12.7",
     "prismjs": "^1.29.0",
     "rollup-plugin-copy": "^3.4.0",
@@ -34,7 +39,8 @@
     "vite": "^2.8.0",
     "vite-plugin-md": "^0.12.4",
     "vite-plugin-prismjs": "^0.0.11",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "yorkie": "^2.0.0"
   },
   "eslintConfig": {
     "root": true,
@@ -81,5 +87,22 @@
       "**/*.cts",
       "**/*.json"
     ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
+      "eslint --cache --fix"
+    ],
+    "**/*.{html,vue,css,less,scss}": [
+      "stylelint --fix"
+    ]
+  },
+  "gitHooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx commitlint --edit"
   }
 }
