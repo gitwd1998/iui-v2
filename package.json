@@ -6,14 +6,18 @@
     "serve": "vite",
     "dev": "vite --config ./vite.config.js",
     "build": "vite build --config ./vite.config.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gen": "node ./script/generator/index.js"
   },
   "dependencies": {
     "vue": "^3.2.25"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.2.0",
+    "fs-extra": "^11.2.0",
     "github-markdown-css": "^5.6.1",
+    "handlebars": "^4.7.8",
+    "inquirer": "^8.2.6",
     "less": "^4.1.2",
     "path": "^0.12.7",
     "prismjs": "^1.29.0",

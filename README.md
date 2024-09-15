@@ -98,3 +98,4 @@ export default defineConfig({
 # 参考文章
 
 [基于 Vite 搭建开发体验超级丝滑的 Vue3 组件库开发框架](https://juejin.cn/post/7040655239849967652)
+[inquirer.js 构建交互式命令行工具，全网详细 inquirer.js中文教程](https://cloud.tencent.com/developer/article/2431867)
