@@ -12,7 +12,7 @@ const RegxMap = {
 // 大驼峰 -> 连接符
 const kebabCase = string => string.replace(/\B([A-Z])/g, '-$1').toLowerCase()
 module.exports = async () => {
-  let meta = await inquirer.prompt([
+  const meta = await inquirer.prompt([
     {
       type: 'input',
       message: '请输入需要创建的组件的英文命名',
@@ -20,7 +20,7 @@ module.exports = async () => {
       default: 'IDemo',
       prefix: '[?]',
       suffix: ':',
-      validate(answer) {
+      validate (answer) {
         const done = this.async()
         const validateRes = RegxMap.IS_COMP_NAME.test(answer)
         if (!validateRes) {
@@ -40,7 +40,7 @@ module.exports = async () => {
       default: '示例',
       prefix: '[?]',
       suffix: ':',
-      validate(answer) {
+      validate (answer) {
         const done = this.async()
         const validateRes = RegxMap.IS_COMP_ZH_NAME.test(answer)
         if (!validateRes) {

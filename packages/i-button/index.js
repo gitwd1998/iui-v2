@@ -1,9 +1,9 @@
-import IButton from './src/index.vue';
+import IButton from './src/index.vue'
 
 export const IButtonPlugin = {
-  install(Vue) {
-    Vue.component('IButton', IButton);
-  },
-};
+  install (Vue) {
+    Vue.component('IButton', IButton)
+  }
+}
 
 export { IButton }

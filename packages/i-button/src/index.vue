@@ -6,18 +6,18 @@
 
 <script>
 export default {
-  name: "IButton"
+  name: 'IButton'
 }
 </script>
 
 <style lang="less" scoped>
 .i-button {
-  padding: 8px 16px;
   box-sizing: border-box;
   height: 40px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  outline: none;
+  padding: 8px 16px;
   cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
 }
 </style>

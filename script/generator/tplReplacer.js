@@ -18,7 +18,7 @@ const getTplFilePath = meta => ({
   comp_index: {
     from: './.template/packages/comp/index.js.tpl',
     to: `../../packages/${meta.compName}/index.js`
-  },
+  }
 })
 
 // 在 packages 中创建组件
@@ -52,7 +52,7 @@ const installTsTplReplacer = (listFileContent) => {
   const indexMeta = {
     importPlugins: listFileContent.map(({ compName }) => `import { ${compName}Plugin } from './${compName}'`).join('\n'),
     installPlugins: listFileContent.map(({ compName }) => `${compName}Plugin.install?.(Vue)`).join('\n    '),
-    exportPlugins: listFileContent.map(({ compName }) => `export * from './${compName}'`).join('\n'),
+    exportPlugins: listFileContent.map(({ compName }) => `export * from './${compName}'`).join('\n')
   }
   const installFileContent = handlebars.compile(indexFileTpl, { noEscape: true })(indexMeta)
   fs.outputFile(resolve(__dirname, indexFileTo), installFileContent, err => {
@@ -73,7 +73,7 @@ const routerTplReplacer = (listFileContent) => {
         meta: { title: '${comp.compClassName}' },
         component: () => import('../../packages/${comp.compName}/docs/README.md')
       }`
-    ),
+    )
   }
   const routerFileContent = handlebars.compile(indexFileTpl, { noEscape: true })(indexMeta)
   fs.outputFile(resolve(__dirname, indexFileTo), routerFileContent, err => {

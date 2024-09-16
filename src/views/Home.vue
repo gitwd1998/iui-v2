@@ -16,17 +16,13 @@
 </template>
 
 <script setup>
-import txt from "/src/assets/text.txt?raw";
-import txtUrl from "/src/assets/text.txt?url";
-import md from "/src/assets/md.md?raw";
-import mdUrl from "/src/assets/md.md?url";
-import img from "/src/assets/logo.png?raw";
-import imgUrl from "/src/assets/logo.png?url";
-import json from "/src/assets/json.json";
-import jsonUrl from "/src/assets/json.json?url";
-import jsonStr from "/src/assets/json.json?raw";
-import { xiamingrui } from "/src/assets/json.json";
+import txt from '@/assets/text.txt?raw'
+import txtUrl from '@/assets/text.txt?url'
+import md from '@/assets/md.md?raw'
+import mdUrl from '@/assets/md.md?url'
+import img from '@/assets/logo.png?raw'
+import imgUrl from '@/assets/logo.png?url'
+import json, { xiamingrui } from '@/assets/json.json'
+import jsonUrl from '@/assets/json.json?url'
+import jsonStr from '@/assets/json.json?raw'
 </script>
-
-<style lang="less" scoped>
-</style>

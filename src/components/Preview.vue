@@ -13,60 +13,65 @@
 </template>
 
 <script setup>
-import Prism from "prismjs";
-import { nextTick, onMounted, ref } from "vue";
+import { nextTick, onMounted, ref } from 'vue'
+import Prism from 'prismjs'
 const props = defineProps({
   componentPath: {
     type: String,
     required: true
   }
 })
-const code = ref("");
-const show = ref(false);
-const sourceCode = ref("");
-const height = ref(0);
+const code = ref('')
+const show = ref(false)
+const sourceCode = ref('')
+const height = ref(0)
 onMounted(() => {
   import(`../../packages/${props.componentPath}/docs/demo.vue?raw`).then(
     async (module) => {
-      sourceCode.value = module.default;
+      sourceCode.value = module.default
       await nextTick()
       Prism.highlightAll()
-      height.value = code.value.getClientRects()[0].height + "px";
+      height.value = code.value.getClientRects()[0].height + 'px'
     }
-  );
+  )
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .preview {
-  border: 1px solid var(--color-border-muted);
+  border: 1px solid var(--borderColor-muted);
   border-radius: 3px;
   transition: 0.2s;
+
   &:hover {
-    box-shadow: 0 0 8px 0 var(--color-border-muted),
-      0 2px 4px 0 var(--color-border-muted);
+    box-shadow: 0 0 8px 0 var(--borderColor-muted), 0 2px 4px 0 var(--borderColor-muted);
   }
+
   .source {
     padding: 26px;
   }
+
   .meta {
-    border-top: 0.5px solid var(--color-border-muted);
-    border-bottom: 0.5px solid var(--color-border-muted);
-    transition: 0.5s;
     overflow: hidden;
+    border-top: 0.5px solid var(--borderColor-muted);
+    border-bottom: 0.5px solid var(--borderColor-muted);
+    transition: 0.5s;
+
     .code {
       padding: 10px;
     }
   }
+
   .control {
     padding: 10px;
     color: #d3dce6;
     text-align: right;
     cursor: pointer;
     transition: 0.2s;
+
     &:hover {
       color: #409eff;
-      background: var(--color-border-muted);
+      background: var(--borderColor-muted);
     }
   }
 }

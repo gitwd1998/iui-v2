@@ -4,10 +4,6 @@
 
 <script>
 export default {
-  name: "IIcon"
+  name: 'IIcon'
 }
 </script>
-
-<style lang="less" scoped>
-.i-icon {}
-</style>

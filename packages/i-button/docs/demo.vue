@@ -3,10 +3,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const num = ref(1);
+const num = ref(1)
 const handleClick = () => {
-  console.log(num.value++);
+  console.log(num.value++)
 }
 </script>

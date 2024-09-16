@@ -8,7 +8,7 @@
     "build": "vite build --config ./vite.config.js",
     "preview": "vite preview",
     "stylelint": "stylelint **/*.{html,vue,css,less,scss} --fix --ignore-path .gitignore",
-    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "gen": "node ./script/generator/index.js"
   },
   "dependencies": {
@@ -57,7 +57,10 @@
       "standard"
     ],
     "parserOptions": {},
-    "rules": {},
+    "rules": {
+      "vue/multi-word-component-names": "off",
+      "vue/comment-directive": "off"
+    },
     "overrides": [],
     "globals": {},
     "settings": {},
@@ -71,9 +74,12 @@
       "stylelint-config-standard",
       "stylelint-config-recess-order",
       "stylelint-config-standard-less",
-      "stylelint-config-standard-vue"
+      "stylelint-config-standard-vue",
+      "stylelint-config-html"
     ],
-    "rules": {},
+    "rules": {
+      "custom-property-pattern": null
+    },
     "overrides": [],
     "globals": {},
     "ignoreFiles": [
@@ -94,12 +100,8 @@
     ]
   },
   "lint-staged": {
-    "**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
-      "eslint --cache --fix"
-    ],
-    "**/*.{html,vue,css,less,scss}": [
-      "stylelint --fix"
-    ]
+    "**/*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": "npm run eslint",
+    "**/*.{html,vue,css,less,scss}": "npm run stylelint"
   },
   "gitHooks": {
     "pre-commit": "npx lint-staged",

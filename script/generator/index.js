@@ -1,7 +1,7 @@
 const infoCollector = require('./infoCollector')
 const tplReplacer = require('./tplReplacer')
 
-run = async () => {
+const run = async () => {
   const meta = await infoCollector()
   tplReplacer(meta)
   console.log('\x1B[36m%s\x1B[0m', meta)

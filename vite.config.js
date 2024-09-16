@@ -9,8 +9,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      'packages': resolve(__dirname, './packages'),
-    },
+      packages: resolve(__dirname, './packages')
+    }
   },
   plugins: [
     vue({ include: [/\.vue$/, /\.md$/] }),
@@ -23,7 +23,7 @@ export default defineConfig({
       // 主题
       theme: 'default',
       // 样式
-      css: true,
+      css: true
     })
   ]
 })
